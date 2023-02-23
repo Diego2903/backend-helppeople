@@ -122,6 +122,10 @@ export const deleteCiudadano = async (req, res) => {
             };
             await pool.request()
                 .input("id", sql.Int, id)
+                .query(querys.deleteAplicacaionOfertaByCiudadanoId)
+
+            await pool.request()
+                .input("id", sql.Int, id)
                 .query(querys.deleteCuidadano)
             res.json()
         } catch (error) {

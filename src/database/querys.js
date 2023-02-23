@@ -3,6 +3,7 @@ export const querys = {
     getCiudadanoById: "SELECT * FROM ciudadano WHERE id = @id",
     addNewCuidadano:
     "INSERT INTO ciudadano (documento, nombres, apellidos, fecha_nacimiento, profesion, aspiracion_salarial, correo_electronico, tipo_documento_id) VALUES (@documento, @nombres, @apellidos, @fecha_nacimiento, @profesion, @aspiracion_salarial, @correo_electronico, @tipo_documento_id)",
+    deleteAplicacaionOfertaByCiudadanoId: "DELETE FROM ciudadano_vacante WHERE ciudadano_id = @id",
     deleteCuidadano: "DELETE FROM ciudadano WHERE id= @id",
     getTotalCiudadano: "SELECT COUNT(*) FROM BolsaEmpleoDB.dbo.ciudadano",
     updateCuidadanoById:
