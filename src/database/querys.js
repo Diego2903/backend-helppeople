@@ -1,5 +1,5 @@
 export const querys = {
-    getAllCuidadanos: "SELECT TOP(500) * FROM ciudadano",
+    getAllCuidadanos: "SELECT ciudadano.id, tipo_documento.nombre as nombre_tipo_documento, ciudadano.documento, ciudadano.nombres, ciudadano.apellidos, ciudadano.fecha_nacimiento, ciudadano.profesion, ciudadano.aspiracion_salarial, ciudadano.correo_electronico FROM ciudadano LEFT JOIN tipo_documento ON ciudadano.tipo_documento_id = tipo_documento.id",
     getCiudadanoById: "SELECT * FROM ciudadano WHERE id = @id",
     addNewCuidadano:
     "INSERT INTO ciudadano (documento, nombres, apellidos, fecha_nacimiento, profesion, aspiracion_salarial, correo_electronico, tipo_documento_id) VALUES (@documento, @nombres, @apellidos, @fecha_nacimiento, @profesion, @aspiracion_salarial, @correo_electronico, @tipo_documento_id)",
